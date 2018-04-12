@@ -1,12 +1,19 @@
 {
-  "title": "Formation ESNEXT",
+  "title": "Workshop TypeScript",
   "author": "Rossi Oddet",
   "plugins": [
-    "auto-summary"
+    "auto-summary",
+    "github-edit"
   ],
   "ignores": [
     "_book",
     "node_modules",
     "sources"
-  ]
+  ],
+  "pluginsConfig": {
+    "github-edit": {
+      "repo": "DevInstitut/workshop-typescript",
+      "branch": "master"
+    }
+  }
 }
