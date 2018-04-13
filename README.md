@@ -12,7 +12,19 @@
 
 ## Objectif
 
-(en cours de rédaction)
+L'objectif de ce TP est de construire une application permettant de visualiser les données d'une conférence (_BreizhCamp 2018_).
+
+![](images/conference/accueil-menu-deplie.png)
+
+Une erreur s'est glissée dans la maquette : il manque le bouton `Voir les présentateurs`.
+
+Cette construction se fera par la mise en place de _techniques_ souvent utilisées par les frameworks Web :
+
+* Templating
+* Routeur
+* Consommation d'API REST
+* Stockage local
+* ...
 
 
 ## Un mot sur l'auteur
