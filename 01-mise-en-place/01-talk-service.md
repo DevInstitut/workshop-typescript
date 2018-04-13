@@ -1,8 +1,9 @@
 # Service TalkService
 
-* Créer une classe `TalkService` dans le fichier _src/services/talk.service.ts_.
+* Créer une classe `TalkService` dans le fichier `src/services/talk.service.ts`.
 
-* Ajouter une méthode _findAllSessions_ retournant une **Promesse** de tableau de sessions.
+* Ajouter une méthode `findAllSessions` retournant une **Promesse** de tableau de sessions.
+ * Créer une class `Session` (`src/domains/session.ts`)
 
 Ce service récupère les données depuis un appel HTTP sur le site du BreizhCamp.
 
@@ -11,7 +12,9 @@ Voici un exemple d'appel HTTP avec jquery :
 ```ts
 import * as $ from "jquery";
 
-$.get("https://jsonplaceholder.typicode.com/posts").then(data =>
+const promise$ = $.get("https://jsonplaceholder.typicode.com/posts");
+
+promise$.then(data =>
       console.log(data)
 );
 ```

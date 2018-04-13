@@ -10,9 +10,7 @@ Pour cela, nous allons écouter les événements `load` et `onhashchange`.
 
 Mettre en place un routeur dans le fichier _src/index.js_ à l'aide de l'exemple ci-dessous :
 
-[source,javascript]
-.src/index.js
-```
+```ts
 var router = () => {
     if (location.hash == '#speakers-list') {
         // TODO afficher vue liste des présentateurs

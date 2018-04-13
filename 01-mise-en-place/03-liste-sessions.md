@@ -4,8 +4,8 @@
 
 * Cette classe doit implémenter l'interface `Component`.
 
-* Compléter la méthode `render(idView)` : affiche liste des prénoms des présentateurs à l'emplacement désigné par le sélecteur.
+* Compléter la méthode `render(selector)` : affiche liste des prénoms des présentateurs à l'emplacement désigné par le sélecteur.
 
-* Modifier le fichier _src/index.ts_ pour afficher la liste des prénoms des présentateurs.
+* Modifier le fichier `src/index.ts` pour afficher la liste des prénoms des présentateurs.
 
 * Tester. Vérifier l'affichage dans un navigateur.

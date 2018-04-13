@@ -22,7 +22,7 @@ npm start
 ```
 ## Point d'entrée de l'application
 
-* Le point de départ de l'application sera `src/index.ts_`.
+* Le point de départ de l'application sera `src/index.ts`.
 
 * Compléter ce fichier avec le contenu suivant :
 
@@ -42,7 +42,7 @@ npm i -S boostrap jquery popper.js @types/jquery
 
 * Compléter le fichier `src/vendor.ts` avec les dépendances suivantes :
 
-```
+```ts
 // ...
 
 import "bootstrap";
@@ -52,4 +52,58 @@ import "bootstrap/dist/css/bootstrap.css";
 ```
 
 * Redémarrer et vérifier la prise en compte de Bootstrap dans la page.
+
+## Alias pour importer les modules
+
+### Problématique
+
+Partons de l'arborescence suivante :
+
+```
+/app
+    /services
+        service1.ts
+        /group
+            service2.ts
+    /domains
+        session.ts
+```
+
+Si nous devons importer du contenu de `/app/domains/session.ts` dans le fichier `/app/services/service1.ts`.
+
+```ts
+import Session from '../session.ts'
+```
+Si nous devons importer du contenu de `/app/domains/session.ts` dans le fichier `/app/services/group/service2.ts`.
+```ts
+import Session from '../../session.ts'
+```
+
+### Uniformiser les imports
+
+Pour faciliter l'import de modules, ajouter la configuration suivante dans le fichier `tsconfig.json`.
+
+```ts
+{
+  "compilerOptions": {
+    ...
+    "baseUrl": "src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@services/*": ["services/*"],
+      "@domains/*": ["domains/*"]
+    },
+    ...
+  },
+  ...
+}
+```
+
+Quelque soit les fichiers, l'import de `/app/domains/session.ts` sera le même :
+
+```ts
+import Session from '@domains/session.ts'
+```
+
+
 
