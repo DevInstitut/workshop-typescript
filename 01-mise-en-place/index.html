@@ -248,7 +248,7 @@
 <pre><code>npm start
 </code></pre><h2 id="point-dentr&#xE9;e-de-lapplication">Point d&apos;entr&#xE9;e de l&apos;application</h2>
 <ul>
-<li><p>Le point de d&#xE9;part de l&apos;application sera <code>src/index.ts_</code>.</p>
+<li><p>Le point de d&#xE9;part de l&apos;application sera <code>src/index.ts</code>.</p>
 </li>
 <li><p>Compl&#xE9;ter ce fichier avec le contenu suivant :</p>
 </li>
@@ -266,15 +266,51 @@
 </code></pre><ul>
 <li>Compl&#xE9;ter le fichier <code>src/vendor.ts</code> avec les d&#xE9;pendances suivantes :</li>
 </ul>
-<pre><code>// ...
+<pre><code class="lang-ts"><span class="hljs-comment">// ...</span>
 
-import &quot;bootstrap&quot;;
-import &quot;popper.js&quot;;
-import &quot;jquery&quot;;
-import &quot;bootstrap/dist/css/bootstrap.css&quot;;
-</code></pre><ul>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;bootstrap&quot;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;popper.js&quot;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;jquery&quot;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;bootstrap/dist/css/bootstrap.css&quot;</span>;
+</code></pre>
+<ul>
 <li>Red&#xE9;marrer et v&#xE9;rifier la prise en compte de Bootstrap dans la page.</li>
 </ul>
+<h2 id="alias-pour-importer-les-modules">Alias pour importer les modules</h2>
+<h3 id="probl&#xE9;matique">Probl&#xE9;matique</h3>
+<p>Partons de l&apos;arborescence suivante :</p>
+<pre><code>/app
+    /services
+        service1.ts
+        /group
+            service2.ts
+    /domains
+        session.ts
+</code></pre><p>Si nous devons importer du contenu de <code>/app/domains/session.ts</code> dans le fichier <code>/app/services/service1.ts</code>.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> Session from <span class="hljs-string">&apos;../session.ts&apos;</span>
+</code></pre>
+<p>Si nous devons importer du contenu de <code>/app/domains/session.ts</code> dans le fichier <code>/app/services/group/service2.ts</code>.</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> Session from <span class="hljs-string">&apos;../../session.ts&apos;</span>
+</code></pre>
+<h3 id="uniformiser-les-imports">Uniformiser les imports</h3>
+<p>Pour faciliter l&apos;import de modules, ajouter la configuration suivante dans le fichier <code>tsconfig.json</code>.</p>
+<pre><code class="lang-ts">{
+  <span class="hljs-string">&quot;compilerOptions&quot;</span>: {
+    ...
+    <span class="hljs-string">&quot;baseUrl&quot;</span>: <span class="hljs-string">&quot;src&quot;</span>,
+    <span class="hljs-string">&quot;paths&quot;</span>: {
+      <span class="hljs-string">&quot;@components/*&quot;</span>: [<span class="hljs-string">&quot;components/*&quot;</span>],
+      <span class="hljs-string">&quot;@services/*&quot;</span>: [<span class="hljs-string">&quot;services/*&quot;</span>],
+      <span class="hljs-string">&quot;@domains/*&quot;</span>: [<span class="hljs-string">&quot;domains/*&quot;</span>]
+    },
+    ...
+  },
+  ...
+}
+</code></pre>
+<p>Quelque soit les fichiers, l&apos;import de <code>/app/domains/session.ts</code> sera le m&#xEA;me :</p>
+<pre><code class="lang-ts"><span class="hljs-keyword">import</span> Session from <span class="hljs-string">&apos;@domains/session.ts&apos;</span>
+</code></pre>
 
                                 
                                 </section>
@@ -318,7 +354,7 @@ import &quot;bootstrap/dist/css/bootstrap.css&quot;;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mise en place du projet","level":"1.2","depth":1,"next":{"title":"Service TalkService","level":"1.2.1","depth":2,"path":"01-mise-en-place/01-talk-service.md","ref":"01-mise-en-place/01-talk-service.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["auto-summary","github-edit"],"ignores":["_book","node_modules","sources"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"github-edit":{"repo":"DevInstitut/workshop-typescript","branch":"master"},"auto-summary":{},"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"Rossi Oddet","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Workshop TypeScript","gitbook":"*"},"file":{"path":"01-mise-en-place/README.md","mtime":"2018-04-13T04:53:59.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-13T04:57:22.752Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Mise en place du projet","level":"1.2","depth":1,"next":{"title":"Service TalkService","level":"1.2.1","depth":2,"path":"01-mise-en-place/01-talk-service.md","ref":"01-mise-en-place/01-talk-service.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["auto-summary","github-edit"],"ignores":["_book","node_modules","sources"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"github-edit":{"repo":"DevInstitut/workshop-typescript","branch":"master"},"auto-summary":{},"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"Rossi Oddet","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Workshop TypeScript","gitbook":"*"},"file":{"path":"01-mise-en-place/README.md","mtime":"2018-04-13T06:24:35.177Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-13T06:27:32.341Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

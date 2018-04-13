@@ -242,33 +242,33 @@
 }
 </code></pre>
 <p>La m&#xE9;thode <code>render</code> permet au composant de s&apos;ins&#xE9;rer dans le DOM &#xE0; l&apos;endroit pr&#xE9;ciser par le s&#xE9;lecteur (<code>selector</code>).</p>
-<p>Si le s&#xE9;lecteur n&apos;est pas pr&#xE9;cis&#xE9; avec le composant s&apos;ins&#xE8;re dans l&apos;int&#xE9;gralit&#xE9; du corps de la page.</p>
+<p>Si le s&#xE9;lecteur n&apos;est pas pr&#xE9;cis&#xE9;, le composant s&apos;ins&#xE8;re dans l&apos;int&#xE9;gralit&#xE9; du corps de la page.</p>
 <h2 id="structure">Structure</h2>
 <p>Le composant <code>LayoutComponent</code> permet d&apos;afficher la structure globale de l&apos;application :</p>
 <ul>
 <li>une ent&#xEA;te compos&#xE9; d&apos;un logo et d&apos;un menu;</li>
-<li>une zone qui va &#xEA;tre modifi&#xE9; par d&apos;autres composants</li>
+<li>une zone qui va &#xEA;tre modifi&#xE9;e par d&apos;autres composants</li>
 <li><p>un pied de page.</p>
 </li>
-<li><p>Cr&#xE9;er une classe <em>LayoutComponent</em> dans le fichier <em>src/components/layout.component.ts</em>.</p>
+<li><p>Cr&#xE9;er une classe <code>LayoutComponent</code> dans le fichier <code>src/components/layout.component.ts</code>.</p>
 </li>
 <li><p>Cr&#xE9;er un variable <code>template</code> avec le contenu suivant :</p>
 </li>
 </ul>
 <pre><code class="lang-ts">
 <span class="hljs-keyword">const</span> template = <span class="hljs-string">`
-&lt;header&gt;Ici Bient&#xF4;t un logo&lt;/header&gt;
-&lt;nav&gt;Ici bient&#xF4;t un menu&lt;/nav&gt;
-&lt;section id=&quot;main-view&quot;&gt;
-    Ici le contenu principal en attente de chargement
-&lt;/section&gt;
-&lt;footer&gt;Ici bient&#xF4;t un pied de page&lt;/footer&gt;
+    &lt;header&gt;Ici Bient&#xF4;t un logo&lt;/header&gt;
+    &lt;nav&gt;Ici bient&#xF4;t un menu&lt;/nav&gt;
+    &lt;section id=&quot;main-view&quot;&gt;
+        Ici le contenu principal en attente de chargement
+    &lt;/section&gt;
+    &lt;footer&gt;Ici bient&#xF4;t un pied de page&lt;/footer&gt;
 `</span>
 </code></pre>
 <ul>
 <li><p>Cette classe doit impl&#xE9;menter l&apos;interface <code>Component</code>.</p>
 </li>
-<li><p>Compl&#xE9;ter la m&#xE9;thode <code>render()</code> : le corps de l&apos;&#xE9;l&#xE9;ment HTML <code>body</code> avec le contenu de la variable <code>template</code>.</p>
+<li><p>Compl&#xE9;ter la m&#xE9;thode <code>render()</code> : le corps de l&apos;&#xE9;l&#xE9;ment HTML <code>body</code> est remplac&#xE9; par le contenu de la variable <code>template</code>.</p>
 </li>
 <li><p>Modifier le fichier <code>src/index.ts</code> pour invoquer la m&#xE9;thode <code>render()</code> du composant <code>LayoutComponent</code>.</p>
 </li>
@@ -318,7 +318,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Structure de la page","level":"1.2.2","depth":2,"next":{"title":"Composant Liste sessions","level":"1.2.3","depth":2,"path":"01-mise-en-place/03-liste-sessions.md","ref":"01-mise-en-place/03-liste-sessions.md","articles":[]},"previous":{"title":"Service TalkService","level":"1.2.1","depth":2,"path":"01-mise-en-place/01-talk-service.md","ref":"01-mise-en-place/01-talk-service.md","articles":[]},"dir":"ltr"},"config":{"plugins":["auto-summary","github-edit"],"ignores":["_book","node_modules","sources"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"github-edit":{"repo":"DevInstitut/workshop-typescript","branch":"master"},"auto-summary":{},"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"Rossi Oddet","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Workshop TypeScript","gitbook":"*"},"file":{"path":"01-mise-en-place/02-layout.md","mtime":"2018-04-13T04:53:59.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-13T04:57:22.752Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Structure de la page","level":"1.2.2","depth":2,"next":{"title":"Composant Liste sessions","level":"1.2.3","depth":2,"path":"01-mise-en-place/03-liste-sessions.md","ref":"01-mise-en-place/03-liste-sessions.md","articles":[]},"previous":{"title":"Service TalkService","level":"1.2.1","depth":2,"path":"01-mise-en-place/01-talk-service.md","ref":"01-mise-en-place/01-talk-service.md","articles":[]},"dir":"ltr"},"config":{"plugins":["auto-summary","github-edit"],"ignores":["_book","node_modules","sources"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"github-edit":{"repo":"DevInstitut/workshop-typescript","branch":"master"},"auto-summary":{},"highlight":{},"search":{},"lunr":{"ignoreSpecialCharacters":false,"maxIndexSize":1000000},"sharing":{"all":["facebook","google","twitter","weibo","instapaper"],"facebook":true,"google":false,"instapaper":false,"twitter":true,"vk":false,"weibo":false},"fontsettings":{"family":"sans","size":2,"theme":"white"},"theme-default":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}}},"theme":"default","author":"Rossi Oddet","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Workshop TypeScript","gitbook":"*"},"file":{"path":"01-mise-en-place/02-layout.md","mtime":"2018-04-13T06:24:35.177Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-04-13T06:27:32.341Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
