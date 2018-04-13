@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.org/DevInstitut/workshop-typescript.svg?branch=master)](https://travis-ci.org/DevInstitut/workshop-typescript)
 
 * Version en ligne : http://www.dev-institut.fr/workshop-typescript
-* Contribuer : https://github.com/DevInstitut/workshop-typescript
 
 
 ## Contexte
