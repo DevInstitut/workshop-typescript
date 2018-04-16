@@ -6,6 +6,6 @@
 
 * Compléter la méthode `render(selector)` : affiche liste des prénoms des présentateurs à l'emplacement désigné par le sélecteur.
 
-* Modifier le fichier `src/index.ts` pour afficher la liste des prénoms des présentateurs.
+* Modifier le fichier `src/index.ts` pour afficher la liste des titres de sessions.
 
 * Tester. Vérifier l'affichage dans un navigateur.
