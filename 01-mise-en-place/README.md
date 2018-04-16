@@ -37,7 +37,7 @@ alert('Conférence App démarré !');
 * Installer les dépendances Bootstrap
 
 ```
-npm i -S boostrap jquery popper.js @types/jquery
+npm i -S bootsrap jquery popper.js @types/jquery
 ```
 
 * Compléter le fichier `src/vendor.ts` avec les dépendances suivantes :
