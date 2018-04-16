@@ -4,7 +4,7 @@
 
 * Cette classe doit implémenter l'interface `Component`.
 
-* Compléter la méthode `render(selector)` : affiche liste des prénoms des présentateurs à l'emplacement désigné par le sélecteur.
+* Compléter la méthode `render(selector)` : affiche la liste des titres de sessions à l'emplacement désigné par le sélecteur.
 
 * Modifier le fichier `src/index.ts` pour afficher la liste des titres de sessions.
 
